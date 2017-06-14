@@ -21,6 +21,7 @@ public class Main extends GameCore{
         resourceManager.loadImages();
         resourceManager.loadSprites();
     }
+
     public void draw(Graphics2D g)
     {
 
