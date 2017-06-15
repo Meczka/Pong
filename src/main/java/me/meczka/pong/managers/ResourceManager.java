@@ -11,7 +11,7 @@ import java.awt.*;
  * Created by Patryk on 14.06.2017.
  */
 public class ResourceManager {
-    private final String FILEPATH = "";
+    private final String FILEPATH = "D:\\programImage";
     private Image ballimg,paletka;
     public final int BALLIMG=1,PALETKA=2;
     public final int BALL=1,PALETKA1=2,PALETKA2=3;
@@ -29,8 +29,8 @@ public class ResourceManager {
     }
     public void loadImages()
     {
-        ballimg=loadImage("ball");
-        paletka=loadImage("paletka");
+        ballimg=loadImage("ball.png");
+        paletka=loadImage("paletka.png");
     }
     public Image getImage(int name)
     {
@@ -46,7 +46,7 @@ public class ResourceManager {
     public void loadSprites()
     {
         ball = new Ball(screenwidth/2,screenheight/2,getImage(BALLIMG));
-        paletka1 = new Paletka(screenwidth/2,screenheight-100,getImage(PALETKA));
+        paletka1 = new Paletka(screenwidth/2,screenheight/2,getImage(PALETKA));
         paletka2 = new Paletka(screenwidth/2,100,getImage(PALETKA));
     }
     public Sprite getSprite(int name)
