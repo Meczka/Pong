@@ -16,6 +16,9 @@ public class ResourceManager {
     public final int BALLIMG=1,PALETKA=2;
     public final int BALL=1,PALETKA1=2,PALETKA2=3;
 
+    //stałe wymiaty obrazkow
+    public final int PALETKAHEIGHT=50,PALETKAWIDTH=150,BALLSIZE=25;
+
     private int screenwidth,screenheight;
     private Sprite ball,paletka1,paletka2;
     public ResourceManager(int screenwidth,int screenheight)
@@ -45,9 +48,10 @@ public class ResourceManager {
     }
     public void loadSprites()
     {
-        ball = new Ball(screenwidth/2,screenheight/2,getImage(BALLIMG));
-        paletka1 = new Paletka(screenwidth/2,screenheight/2,getImage(PALETKA));
-        paletka2 = new Paletka(screenwidth/2,100,getImage(PALETKA));
+        ball = new Ball(screenwidth/2-BALLSIZE,screenheight/2-BALLSIZE,getImage(BALLIMG),BALLSIZE,BALLSIZE);
+        System.out.println(screenheight);
+        paletka1 = new Paletka(screenwidth/2-PALETKAWIDTH/2,screenheight-PALETKAHEIGHT,getImage(PALETKA),PALETKAWIDTH,PALETKAHEIGHT);
+        paletka2 = new Paletka(screenwidth/2-PALETKAWIDTH/2,0,getImage(PALETKA),PALETKAWIDTH,PALETKAHEIGHT);
     }
     public Sprite getSprite(int name)
     {
