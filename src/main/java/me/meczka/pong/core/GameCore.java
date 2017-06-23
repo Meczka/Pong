@@ -28,7 +28,7 @@ public abstract  class GameCore {
 	public void init()
 	{
 		screen = new ScreenManager();
-		DisplayMode dp =new DisplayMode(1920, 1080, DisplayMode.BIT_DEPTH_MULTI, DisplayMode.REFRESH_RATE_UNKNOWN);
+		DisplayMode dp =new DisplayMode(1920, 1200, DisplayMode.BIT_DEPTH_MULTI, DisplayMode.REFRESH_RATE_UNKNOWN);
 		screen.setFullScreenWindow(dp);
 		Window window = screen.getFullScreenWindow();
 		window.setFont(new Font("Dialog",Font.PLAIN,24));

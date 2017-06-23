@@ -11,13 +11,13 @@ import java.awt.*;
  * Created by Patryk on 14.06.2017.
  */
 public class ResourceManager {
-    private final String FILEPATH = "D:\\programImage";
+    private final String FILEPATH = "E:\\programimage";
     private Image ballimg,paletka;
     public final int BALLIMG=1,PALETKA=2;
     public final int BALL=1,PALETKA1=2,PALETKA2=3;
 
     //stałe wymiaty obrazkow
-    public final int PALETKAHEIGHT=50,PALETKAWIDTH=150,BALLSIZE=25;
+    public final int PALETKAHEIGHT=25,PALETKAWIDTH=200,BALLSIZE=25;
 
     private int screenwidth,screenheight;
     private Sprite ball,paletka1,paletka2;

@@ -61,9 +61,13 @@ public class Main extends GameCore{
         g.drawImage(paletka1.getImage(),(int)paletka1.getX(),(int)paletka1.getY(),null);
         g.drawImage(paletka2.getImage(),(int)paletka2.getX(),(int)paletka2.getY(),null);
         g.drawImage(ball.getImage(),(int)ball.getX(),(int)ball.getY(),null);
+        g.setColor(Color.white);
+        g.drawString("Nietrafione: "+score.getPunktyPaletka1(),screen.getWidth()-screen.getWidth()/6,screen.getHeight()-screen.getHeight()/5);
+        g.drawString("Nietrafione: "+score.getPunktyPaletka2(),screen.getWidth()-screen.getWidth()/6,screen.getHeight()/6 );
     }
     public void update(long elapsedTime)
     {
+
         //paletka1(dolna)
         Sprite paletka1 = resourceManager.getSprite(resourceManager.PALETKA1);
         Sprite paletka2 = resourceManager.getSprite(resourceManager.PALETKA2);
@@ -108,16 +112,16 @@ public class Main extends GameCore{
         if(isCollision(ball,paletka1))
         {
             ball.setY(paletka1.getY()-paletka1.getHeight());
-            ((Ball)ball).bounce(Ball.VEERTICALY);
+            ((Ball)ball).bounce(Ball.PALETKA);
         }
         else if(isCollision(ball,paletka2))
         {
             ball.setY(paletka2.getY()+paletka2.getHeight());
-            ((Ball)ball).bounce(Ball.VEERTICALY);
+            ((Ball)ball).bounce(Ball.PALETKA);
         }
         if(isCollisionEdge(ball)!=0)
         {
-            ((Ball)ball).bounce(Ball.HORIZONTALY);
+            ((Ball)ball).bounce(Ball.SCIANA);
         }
 
         //sprawdza czy paletka nie wyszla za krawedz
@@ -154,11 +158,11 @@ public class Main extends GameCore{
 
             if(is==UP)
             {
-
+                score.addMiss(score.UP);
             }
             else if(is==DOWN)
             {
-
+                score.addMiss(score.DOWN);
             }
         }
 
@@ -200,7 +204,7 @@ public class Main extends GameCore{
         }
         else if(ball.getY()<0)
         {
-            return DOWN;
+            return UP;
         }
         else
         {
